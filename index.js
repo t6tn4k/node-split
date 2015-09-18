@@ -77,7 +77,7 @@ var checkOptions = function(_options) {
                     case 'k': case 'K':   return 1024;
                     case 'm': case 'M':   return 1048576;
                     case 'kb': case 'KB': return 1000;
-                    case 'mb': case 'MB': return 1000;
+                    case 'mb': case 'MB': return 1000000;
                 }
             })(result[2]);
 
