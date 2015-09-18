@@ -1,0 +1,23 @@
+{
+  "name": "node-split",
+  "version": "1.0.0",
+  "description": "Split buffer in Node.js based on gnu split(1).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t6tn4k/node-split.git"
+  },
+  "keywords": [
+    "split",
+    "util"
+  ],
+  "author": "t6tn4k",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/t6tn4k/node-split/issues"
+  },
+  "homepage": "https://github.com/t6tn4k/node-split#readme"
+}
