@@ -353,7 +353,7 @@ module.exports.split = function(buffer, options, callback) {
                 ++done;
 
                 if (!errored && done === splitted.length) {
-                    callback(null, splitted);
+                    callback(null, splitted, filenames);
                 }
             });
         });
