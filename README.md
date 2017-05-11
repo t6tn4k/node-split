@@ -82,7 +82,7 @@ fs.readFile('./in.bin', { encoding: null }, function(err, data) {
 `splitSync` split buffer synchronously.
 
 ```javascript
-var split = require('node-split').splitSync;
+var splitSync = require('node-split').splitSync;
 var fs = require('fs');
 
 var data = fs.readFileSync('./in.bin', { encoding: null });
@@ -90,4 +90,3 @@ var splitted = splitSync(data, {
     bytes: '20K' // 20 * 1024 bytes per files
 });
 ```
-
