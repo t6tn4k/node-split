@@ -3,6 +3,9 @@
   "version": "1.1.0",
   "description": "Split buffer in Node.js based on gnu split(1).",
   "main": "index.js",
+  "bin": {
+    "split": "./bin/split"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

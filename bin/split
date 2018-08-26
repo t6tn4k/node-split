@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+var splitSync = require('../index').splitSync;
+var fs = require('fs');
+
+var args = process.argv.slice(2);
+var orderedArgs = [];
+var suffix_length, additional_suffix, bytes, line_bytes, numeric_suffixes, lines;
+for (var i = 0; i < args.length; i++) {
+    if (args[i] == '-a' || args[i] == '--suffix-length')
+        suffix_length = +args[++i];
+    else if (args[i] == '--additional-suffix')
+        additional_suffix = args[++i];
+    else if (args[i] == '-b' || args[i] == '--bytes')
+        bytes = args[++i];
+    else if (args[i] == '-C' || args[i] == '--line-bytes')
+        line_bytes = args[++i];
+    else if (args[i] == '-d')
+        numeric_suffixes = 0;
+    else if (args[i] == '--numeric-suffixes')
+        numeric_suffixes = +args[++i];
+    else if (args[i] == '-l' || args[i] == '--lines')
+        lines = args[++i];
+    else if (args[i].indexOf('-') == 0)
+        throw new Error("Unknown option " + args[i]);
+    else
+        orderedArgs.push(args[i]);
+}
+
+var [ source, prefix ] = orderedArgs;
+
+var contents = fs.readFileSync(source, { encoding: null });
+
+splitSync(contents, {
+    suffix_length,
+    additional_suffix,
+    bytes,
+    line_bytes,
+    numeric_suffixes,
+    lines,
+    prefix
+});
